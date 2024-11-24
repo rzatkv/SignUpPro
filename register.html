@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نام - Ertebanet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/register.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/persian-date/1.0.0/persian-date.min.css" rel="stylesheet">
+    <link rel="icon" href="https://my.ertebanet.com/assets/img/logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font/dist/font-face.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container text-right">
+        <div class="text-center mb-4">
+            <img src="https://my.ertebanet.com/assets/img/logo.png" alt="Ertebanet" class="img-fluid" style="max-width: 150px;">
+        </div>
+        <form id="registrationForm">
+            <div class="mb-3">
+                <label for="userType">نقش کاربر <span class="text-danger">*</span></label>
+                <select class="form-select" id="userType" required>
+                    <option value="individual">حقیقی</option>
+                    <option value="corporate">حقوقی</option>
+                </select>
+            </div>
+
+            <!-- Individual and Corporate Fields -->
+            <div id="individualFields" style="display: block;">
+                <div class="mb-3">
+                    <label for="firstName">نام <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="firstName" minlength="2" maxlength="20" pattern="^[\u0600-\u06FF\s]+$" required>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName">نام خانوادگی <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="lastName" minlength="2" maxlength="20" pattern="^[\u0600-\u06FF\s]+$" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fatherName">نام پدر <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="fatherName" minlength="2" maxlength="20" pattern="^[\u0600-\u06FF\s]+$" required>
+                </div>
+                <div class="mb-3">
+                    <label for="nationalId">کد ملی <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="nationalId" minlength="10" maxlength="10" required>
+                </div>
+                <div class="mb-3">
+                    <label for="birthDate">تاریخ تولد <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="birthDate" readonly required>
+                </div>
+                <div class="mb-3">
+                    <label for="gender">جنسیت <span class="text-danger">*</span></label>
+                    <select class="form-select" id="gender" required>
+                        <option value="male" selected>آقا</option>
+                        <option value="female">خانم</option>
+                    </select>
+                </div>
+                <div class="mb-3" id="economicCodeField">
+                    <label for="economicCode">کد مالیاتی <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="economicCode" minlength="9" maxlength="12" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address">آدرس <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="address" maxlength="150" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="province">استان <span class="text-danger">*</span></label>
+                    <select class="form-select" id="province" required>
+                        <option value="">لطفاً استان را انتخاب کنید</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="city">شهر <span class="text-danger">*</span></label>
+                    <select class="form-select" id="city" required>
+                        <option value="">لطفاً ابتدا استان را انتخاب کنید</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="postalCode">کد پستی <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="postalCode" minlength="10" maxlength="10" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mobileNumber">تلفن همراه <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="mobileNumber" minlength="11" maxlength="11" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email">ایمیل <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password">گذرواژه <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="password" minlength="8" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword">تایید گذرواژه <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="confirmPassword" minlength="8" required>
+                </div>
+                <div class="mb-3">
+                    <label for="job">شغل <span class="text-danger">*</span></label>
+                    <select class="form-select" id="job" required>
+                        <option value="student">دانشجو</option>
+                        <option value="teacher">معلم</option>
+                        <option value="engineer">مهندس</option>
+                        <option value="doctor">پزشک</option>
+                        <option value="lawyer">وکیل</option>
+                        <option value="freelancer">آزاد</option>
+                        <option value="other">سایر</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="referral">نحوه آشنایی با ما</label>
+                    <select class="form-select" id="referral">
+                        <option value="google">نتایج جستجو در گوگل</option>
+                        <option value="ads">تبلیغات در سایت های مختلف</option>
+                        <option value="website">سایت ما</option>
+                        <option value="friend">معرفی دوستان</option>
+                        <option value="instagram">اینستاگرام</option>
+                        <option value="sms">پیامک تبلیغاتی</option>
+                        <option value="email">پست الکترونیک تبلیغاتی</option>
+                        <option value="videoAds">تبلیغات ویدوئیی</option>
+                        <option value="inPerson">فروش حضوری</option>
+                        <option value="agents">عاملین فروش</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Corporate Fields -->
+            <div id="corporateFields" style="display: none;">
+                <div class="mb-3">
+                    <label for="companyName">نام شرکت <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="companyName" minlength="5" maxlength="25" pattern="^[\u0600-\u06FF\s]+$" required>
+                </div>
+                <div class="mb-3">
+                    <label for="registrationNumber">شماره ثبت <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="registrationNumber" minlength="2" maxlength="12" required>
+                </div>
+                <div class="mb-3">
+                    <label for="registrationDate">تاریخ ثبت شرکت <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="registrationDate" readonly required>
+                </div>
+                <!-- Economic Code for Corporate -->
+                <div class="mb-3">
+                    <label for="corporateEconomicCode">کد اقتصادی <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="corporateEconomicCode" minlength="9" maxlength="12" required>
+                </div>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="termsCheckbox" required>
+                <label class="form-check-label" for="termsCheckbox">قوانین و مقررات را می‌پذیرم <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">(مطالعه قوانین)</a></label>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-green">ثبت نام</button>
+            </div>
+            <div id="errorAlert" class="error-alert"></div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">قوانین و مقررات</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+                </div>
+                <div class="modal-body">
+                    <p>اینجا قوانین و مقررات مربوط به ثبت‌نام و استفاده از خدمات وب‌سایت قرار می‌گیرد. لطفاً با دقت مطالعه کنید و در صورت موافقت، گزینه "می‌پذیرم" را تیک بزنید.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>Designed By ❤️ in Ertebanet.com</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/persian-date/1.0.0/persian-date.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/persian-datepicker/1.0.0/persian-datepicker.min.js"></script>
+    <script src="assets/js/register.js"></script>
+</body>
+</html>
