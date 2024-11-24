@@ -1,0 +1,138 @@
+body {
+    font-family: 'IRANSans', sans-serif;
+    background: url('https://spectrum.ieee.org/media-library/photograph-of-a-data-center-with-green-lights.jpg?id=25590457&width=1200&height=600&coordinates=0%2C63%2C0%2C63') no-repeat center center fixed;
+    background-size: cover;
+    color: #2E8B57;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin-top: 3%;
+}
+
+label {
+    color: #228B22;
+}
+
+.form-control:focus {
+    border-color: #2E8B57;
+    box-shadow: 0 0 0 0.2rem rgba(46, 139, 87, 0.25);
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-green {
+    background-color: #2E8B57;
+    border-color: #2E8B57;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-green:hover {
+    background-color: #228B22;
+    border-color: #228B22;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+.error-alert {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.modal-body {
+    text-align: right;
+}
+
+#individualFields, #corporateFields {
+    display: none;
+}
+
+/* Styling for showing mandatory fields with a red asterisk */
+label span.text-danger {
+    color: #ff0000;
+}
+
+/* Custom checkbox styling for terms and conditions */
+.form-check-label a {
+    color: #2E8B57;
+    text-decoration: underline;
+}
+
+.form-check-input:checked {
+    background-color: #2E8B57;
+    border-color: #2E8B57;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-top: 5%;
+        max-width: 90%;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 15px;
+    }
+
+    .btn-green {
+        width: 100%;
+    }
+}
+
+/* Common classes for colors to reduce redundancy */
+.text-primary-green {
+    color: #2E8B57;
+}
+
+.text-secondary-green {
+    color: #228B22;
+}
+
+.bg-primary-green {
+    background-color: #2E8B57;
+}
+
+.bg-secondary-green {
+    background-color: #228B22;
+}
+
+/* Adding smooth transitions to elements */
+label, .form-check-label, footer {
+    transition: color 0.3s ease-in-out;
+}
+
+/* Enhancing modal and button accessibility */
+.modal-content {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(46, 139, 87, 0.5);
+}
