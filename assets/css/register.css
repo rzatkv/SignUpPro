@@ -1,0 +1,222 @@
+/* General Styles */
+body {
+    font-family: 'Vazir', sans-serif;
+    background: url('https://spectrum.ieee.org/media-library/photograph-of-a-data-center-with-green-lights.jpg?id=25590457&width=1200&height=600&coordinates=0%2C63%2C0%2C63') no-repeat center center fixed;
+    background-size: cover;
+    color: #333333;
+    padding-top: 60px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin-top: 5%;
+}
+
+label {
+    color: #2C3E50;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #28A745;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-green {
+    background-color: #28A745;
+    border-color: #28A745;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 12px 30px;
+}
+
+.btn-green:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.btn-secondary {
+    background-color: #6C757D;
+    border-color: #6C757D;
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 12px 30px;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.error-alert {
+    color: #dc3545;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: none;
+    background-color: #f8d7da;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #f5c6cb;
+}
+
+.modal-body {
+    text-align: right;
+    font-size: 1rem;
+    color: #555555;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+/* Progress Bar Styling */
+.fixed-top .progress {
+    height: 25px;
+    background-color: #e9ecef;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.fixed-top .progress-bar {
+    background-color: #28A745;
+    transition: width 0.4s ease;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 25px;
+    color: #ffffff;
+    border-radius: 15px;
+}
+
+/* Mandatory Fields Asterisk */
+label span.text-danger {
+    color: #dc3545;
+}
+
+/* Custom Checkbox Styling */
+.form-check-label a {
+    color: #28A745;
+    text-decoration: underline;
+}
+
+.form-check-input:checked {
+    background-color: #28A745;
+    border-color: #28A745;
+}
+
+/* Custom Select Styling */
+.custom-select-wrapper {
+    position: relative;
+}
+
+.custom-select-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%2328A745' d='M0 3l5 5 5-5H0z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.form-select {
+    padding-right: 40px;
+    background-color: #ffffff;
+}
+
+/* Password Toggle Icon */
+.toggle-password {
+    cursor: pointer;
+    background-color: #ffffff;
+    border-left: 1px solid #ced4da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password i {
+    color: #6c757d;
+}
+
+/* Smooth Transitions */
+label, .form-check-label, footer, .progress-bar, .btn, .toggle-password {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 35px;
+        margin-top: 10%;
+        max-width: 90%;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    .progress-bar {
+        font-size: 0.9rem;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 25px;
+    }
+
+    .btn-green, .btn-secondary {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    footer {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    .fixed-top .progress {
+        height: 20px;
+    }
+
+    .fixed-top .progress-bar {
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+
+    .toggle-password i {
+        font-size: 1rem;
+    }
+}

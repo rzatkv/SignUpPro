@@ -1,24 +1,27 @@
+/* General Styles */
 body {
-    font-family: 'IRANSans', sans-serif;
+    font-family: 'Vazir', sans-serif;
     background: url('https://spectrum.ieee.org/media-library/photograph-of-a-data-center-with-green-lights.jpg?id=25590457&width=1200&height=600&coordinates=0%2C63%2C0%2C63') no-repeat center center fixed;
     background-size: cover;
     color: #2E8B57;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    max-width: 600px;
-    margin-top: 3%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin-top: 5%;
 }
 
 label {
     color: #228B22;
+    font-weight: 600;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
     border-color: #2E8B57;
     box-shadow: 0 0 0 0.2rem rgba(46, 139, 87, 0.25);
     transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
@@ -29,6 +32,9 @@ label {
     border-color: #2E8B57;
     color: #ffffff;
     transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
 }
 
 .btn-green:hover {
@@ -36,9 +42,13 @@ label {
     border-color: #228B22;
 }
 
+.btn-secondary {
+    border-radius: 50px;
+}
+
 footer {
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.8);
@@ -48,25 +58,30 @@ footer {
 }
 
 .error-alert {
-    color: red;
+    color: #dc3545;
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 10px;
+    display: none;
 }
 
 .modal-body {
     text-align: right;
 }
 
-#individualFields, #corporateFields {
+.step {
     display: none;
 }
 
-/* Styling for showing mandatory fields with a red asterisk */
+.step.active {
+    display: block;
+}
+
+/* Mandatory Fields Asterisk */
 label span.text-danger {
     color: #ff0000;
 }
 
-/* Custom checkbox styling for terms and conditions */
+/* Custom Checkbox Styling */
 .form-check-label a {
     color: #2E8B57;
     text-decoration: underline;
@@ -77,11 +92,11 @@ label span.text-danger {
     border-color: #2E8B57;
 }
 
-/* Media queries for responsive design */
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
-        margin-top: 5%;
+        padding: 30px;
+        margin-top: 10%;
         max-width: 90%;
     }
 
@@ -92,7 +107,7 @@ label span.text-danger {
 
 @media (max-width: 576px) {
     .container {
-        padding: 15px;
+        padding: 20px;
     }
 
     .btn-green {
@@ -100,29 +115,21 @@ label span.text-danger {
     }
 }
 
-/* Common classes for colors to reduce redundancy */
-.text-primary-green {
-    color: #2E8B57;
+/* Enhanced Dropdown Styling */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3E%3Cpath fill='%232E8B57' d='M2 0L0 2h4L2 0zM2 5L0 3h4L2 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 8px 10px;
 }
 
-.text-secondary-green {
-    color: #228B22;
-}
-
-.bg-primary-green {
-    background-color: #2E8B57;
-}
-
-.bg-secondary-green {
-    background-color: #228B22;
-}
-
-/* Adding smooth transitions to elements */
+/* Smooth Transitions */
 label, .form-check-label, footer {
     transition: color 0.3s ease-in-out;
 }
 
-/* Enhancing modal and button accessibility */
+/* Modal and Button Accessibility */
 .modal-content {
     border-radius: 10px;
     padding: 20px;
